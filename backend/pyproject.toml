@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "app-server"
+version = "0.1.0"
+description = ""
+authors = ["Alan <86518968+AlanLikesCoding@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^4.2.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
