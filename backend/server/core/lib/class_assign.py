@@ -98,6 +98,15 @@ class Timetable:
         for p in self.get_student_classes(id_num):
             if p:
                 classes_left.remove(p)
+        return id_num
+
+    def add_teacher(self, class_names: list, teacher_name: str):
+        """Adds a new student with a new ID."""
+
+        id_num = len(self.teacher_classes)
+        self.teacher_name_dict.append(teacher_name)
+        self.teacher_classes.append(class_names)
+        return id_num
 
     def remove_student(self, id_num):
         """Removes a student from the database."""
@@ -105,6 +114,12 @@ class Timetable:
         self.student_name_dict[id_num] = "(removed student) " + student_name_dict[id_num]
         for i in self.periods:
             i[id_num] = None
+
+    def remove_teacher(self, id_num):
+        """Adds a new student with a new ID."""
+
+        self.teacher_name_dict[id_num] = "(removed teacher) " + teacher_name_dict[id_num]
+        self.teacher_classes[id_num] = []
 
 
 if __name__ == "__main__":
