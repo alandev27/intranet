@@ -142,7 +142,7 @@ class Timetable:
 if __name__ == "__main__":
     student_name_dict = ["Mike", "Tom", "Bob"]  # The names of the students, from their IDs
     teacher_name_dict = ["Mr. B", "Ms. W"]  # The names of the teachers, from their IDs
-    class_caps = {"Mathematics": 3}
+    class_caps = {"Mathematics": 3, "English (HL)": 2}
     student_classes = [["Mathematics", "English (SL)", "PST"], ["Mathematics", "English (HL)", "PST"], ["Mathematics", "English (HL)", "SPST"]]
     timetable = Timetable(3, student_classes, [["English (SL)", "English (HL)"], ["Mathematics"]], student_name_dict, teacher_name_dict, class_caps)
     for i in range(len(teacher_name_dict)):
