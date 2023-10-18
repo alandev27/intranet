@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
 
 def auth_login(request):
@@ -11,9 +10,15 @@ def auth_login(request):
     if user is not None:
         login(request, user)
         return JsonResponse({
-            sucess: True,
+            'success': True,
         })
     else:
         return JsonResponse({
-            sucess: False,
+            'success': False,
         })
+    
+def auth_logout(request):
+    logout(request)
+    return JsonResponse({
+        'success': True,
+    })
