@@ -108,16 +108,28 @@ class Timetable:
         self.teacher_classes.append(class_names)
         return id_num
 
-    def remove_student(self, id_num):
+    def remove_student(self, name):
         """Removes a student from the database."""
 
+        for i in range(len(self.student_name_dict)):
+            if self.student_name_dict[i] == name:
+                self.remove_student_id(i)
+                break
+
+    def remove_student_id(self, id_num):
         self.student_name_dict[id_num] = "(removed student) " + student_name_dict[id_num]
         for i in self.periods:
             i[id_num] = None
 
-    def remove_teacher(self, id_num):
+    def remove_teacher(self, name):
         """Adds a new student with a new ID."""
 
+        for i in range(len(self.teacher_name_dict)):
+            if self.teacher_name_dict[i] == name:
+                self.remove_teacher_id(i)
+                break
+
+    def remove_teacher_id(self, id_num):
         self.teacher_name_dict[id_num] = "(removed teacher) " + teacher_name_dict[id_num]
         self.teacher_classes[id_num] = []
 
